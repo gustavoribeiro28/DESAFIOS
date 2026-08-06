@@ -9,17 +9,17 @@
 
 body{
     background: linear-gradient(#B0CBDC, #3C9CEA);
+    min-height: 100vh;
 }
 
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding-top: 30px;
 }
 
 .p-header{
-    margin-left: 100px;
     color: white;
     font-family: "Inter", sans-serif;
 }
@@ -51,7 +51,6 @@ nav a:hover{
     width: 130px;
     height: 30px;
     border-radius: 30px;
-    margin-right: 80px;
     font-family: "Inter", sans-serif;
 }
 
@@ -65,6 +64,8 @@ nav a:hover{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .container-01{
@@ -77,7 +78,6 @@ nav a:hover{
     width: 130px;
     height: 30px;
     border-radius: 5px;
-    margin-right: 80px;
     font-family: "Inter", sans-serif;
 }
 
@@ -87,20 +87,29 @@ nav a:hover{
     background-color: #003f72ca;
 }
 
-img{
-    width: 537px;
+.imagem{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.imagem img{
+    width: 100%;
+    max-width: 600px;
+    height: auto;
 }
 
 h1{
     color: white;
     font-family: "Inter", sans-serif;
-    font-size: 60px;
+    font-size: 50px;
 }
 
 h1:hover{
     transition: 500ms ease;
     color: #003f72ca;
-    font-size: 80px;
+    transform: scale(1.05);
 }
 
 .p-main{
@@ -110,13 +119,13 @@ h1:hover{
 
 .div-buttons{
     display: flex;
+    gap: 15px;
 }
 
 .button-black{
     width: 150px;
     height: 50px;
     border-radius: 30px;
-    margin-right: 80px;
     font-family: "Inter", sans-serif;
     background-color: black;
     color: white;
@@ -126,14 +135,13 @@ h1:hover{
     transition: 500ms ease;
     color: white;
     background-color: #003f72ca;
-    transform: rotate(1turn);
+    transform: translatey(-5px);
 }
 
 .button-white{
     width: 150px;
     height: 50px;
     border-radius: 30px;
-    margin-right: 80px;
     font-family: "Inter", sans-serif;
 }
 
@@ -141,19 +149,17 @@ h1:hover{
     transition: 500ms ease;
     color: white;
     background-color: #b9e4ff;
-    transform: rotate(1turn);
+    transform: translatey(-5px);
 }
 
 .container-02{
     display: flex;
     flex-direction: column;
-    gap: 100px;
 }
 
 .p-main02{
     color: white;
     font-family: "Inter", sans-serif;
-    margin-top: 40px;
 }
 
 h2{
@@ -162,24 +168,9 @@ h2{
     font-size: 100px;
 }
 
-span{
-    color: #14589094;
-}
-
-footer{
-background-color: #bae2fb;
- display: flex;
- justify-content: flex-start;
- gap: 50px;
- padding: 20px;
- font-size: 20px;
-}
-
 .redes{
     display: flex;
     gap: 40px;
-    align-items: center;
-   margin-top: 200px;
 }
 
 .redes a{
@@ -190,4 +181,74 @@ background-color: #bae2fb;
 .redes a:hover{
     transition: 300ms ease;
     transform: translatey(-5px);
+}
+
+@media(max-width: 1262px){
+    .p-main02{
+        display: none;
+    }
+
+    h2{
+        display: none;
+    }
+
+    .redes{
+        position: fixed;
+        left: 30px;
+        bottom: 10px;
+
+        display: flex;
+        gap: 40px;
+    }
+
+    .imagem{
+        position: fixed;
+        bottom: 0;
+        right: 20px;
+    }
+    
+    .conteudo-principal{
+        margin-top: 10%;
+        justify-content: space-between;
+    }
+}
+
+@media( max-width: 780px) {
+    .imagem img{
+        display: none;
+    }
+
+    .conteudo-principal{
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 60px;
+    }
+
+    .container-02{
+        margin-bottom: 40px;
+    }
+
+    .p-main02{
+        display: block;
+    }
+
+    h2{
+        display: block;
+        font-size: 80px;
+    }
+
+    .redes{
+        position: static; /* volta ao comportamento normal */
+        left: auto;
+        bottom: auto;
+}
+
+.p-header{
+    display: none;
+}
+
+.button-header{
+    display: none;
+}
+
 }
