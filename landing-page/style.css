@@ -206,6 +206,12 @@ h2{
         bottom: 0;
         right: 20px;
     }
+
+    .imagem img{
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    }
     
     .conteudo-principal{
         margin-top: 10%;
